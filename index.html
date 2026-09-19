@@ -1049,6 +1049,74 @@
             fill: currentColor;
         }
 
+        /* BOX IN EVIDENZA: VANTAGGIO EXTRA TESSERATI */
+        .tessera-extra-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: #fffdf5;
+            border: 2px solid #f4b223;
+            border-radius: var(--radius-md);
+            padding: 0.9rem 1.1rem;
+            margin: 1.25rem 0 1.5rem;
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(244, 178, 35, 0.15);
+        }
+
+        .extra-icon {
+            font-size: 1.4rem;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .extra-text {
+            font-size: 0.98rem;
+            color: #443400;
+            line-height: 1.5;
+        }
+
+        .extra-text strong {
+            color: #b84118;
+            font-weight: 800;
+        }
+
+        /* AZIONI E PULSANTI TESSERA */
+        .tessera-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .tessera-actions .btn {
+            width: 100%;
+            max-width: none;
+            justify-content: center;
+        }
+
+        .btn-tessera-email {
+            font-size: 0.98rem;
+            padding: 0.8rem 1.25rem;
+        }
+
+        /* NOTA ESPLICATIVA RILASCIO TESSERA */
+        .tessera-note {
+            margin-top: 1.1rem;
+            font-size: 0.875rem;
+            color: var(--c-text-muted);
+            line-height: 1.55;
+            text-align: left;
+            background: #f4f8f1;
+            border-left: 3px solid var(--c-primary);
+            padding: 0.7rem 0.95rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+
+        .tessera-note strong {
+            color: var(--c-forest);
+        }
+
         /* ==========================================================================
            8. NUOVA SEZIONE: SOSTIENICI CON UNA DONAZIONE / BONIFICO BANCARIO
            ========================================================================== */
@@ -1592,6 +1660,16 @@
             .contacts-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .tessera-actions {
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .tessera-actions .btn {
+                width: auto;
+            }
         }
 
         @media (min-width: 900px) {
@@ -2035,14 +2113,27 @@
                         </li>
                     </ul>
 
-                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                        <a href="#contatti" class="btn btn-primary" style="margin-top: 0.5rem;">
-                            Richiedi la tua Tessera
+                    <!-- VANTAGGIO EXTRA TESSERATI -->
+                    <div class="tessera-extra-box">
+                        <span class="extra-icon" aria-hidden="true">🎁</span>
+                        <div class="extra-text">
+                            <strong>Vantaggio extra:</strong> Per ogni bambino con almeno due familiari tesserati, ci sarà uno sconto del 10% sui calendari e sui prodotti natalizi della scuola!
+                        </div>
+                    </div>
+
+                    <div class="tessera-actions">
+                        <a href="mailto:apiccolipassi.spiv@gmail.com?subject=Richiesta%20tessere%20A%20Piccoli%20Passi%20APS" class="btn btn-primary btn-tessera-email" aria-label="Richiedi la tua tessera in formato digitale via email">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink: 0;"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            <span>Richiedi la tua tessera in formato digitale</span>
                         </a>
-                        <a href="#dona" class="btn btn-secondary" style="margin-top: 0.5rem;">
+                        <a href="#dona" class="btn btn-secondary">
                             Versa Quota via Bonifico
                         </a>
                     </div>
+
+                    <p class="tessera-note">
+                        <strong>Nota:</strong> Il rilascio della tessera digitale è gratuito ma subordinato alla compilazione del modulo cartaceo/digitale e al versamento della quota associativa.
+                    </p>
                 </div>
 
             </div>
