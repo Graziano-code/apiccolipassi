@@ -1327,6 +1327,153 @@
             line-height: 1.6;
         }
 
+        /* ==========================================================================
+           8.1 CARD DONAZIONE 5X1000 (COMPATTA E ACCESSIBILE)
+           ========================================================================== */
+        .card-cinque-per-mille {
+            background: #ffffff;
+            border: 2px solid var(--c-orange);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.25rem;
+            box-shadow: var(--shadow-md);
+            text-align: left;
+            position: relative;
+            margin-bottom: 1.75rem;
+        }
+
+        .cinque-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1.5px solid #fdeee7;
+            padding-bottom: 1rem;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .cinque-name-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cinque-icon {
+            width: 38px;
+            height: 38px;
+            background: #fff0e8;
+            color: #b83b0f;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cinque-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .cinque-title {
+            margin: 0;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--c-forest);
+            line-height: 1.3;
+        }
+
+        .cinque-badge {
+            font-size: 0.85rem;
+            background: #fff0e8;
+            color: #9e2a06;
+            font-weight: 700;
+            padding: 0.35rem 0.75rem;
+            border-radius: var(--radius-full);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid #fcd9c7;
+        }
+
+        .cinque-desc {
+            font-size: 1.05rem;
+            color: var(--c-text);
+            line-height: 1.6;
+            margin: 0 0 1.25rem 0;
+        }
+
+        .cf-highlight-box {
+            background: #fdfaf7;
+            border: 1.5px dashed #c04216;
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .cf-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #51636d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cf-code-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cf-code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #9e2a06;
+            letter-spacing: 2px;
+            word-break: break-all;
+        }
+
+        .btn-copy-cf {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: #c04216;
+            color: #ffffff;
+            border: none;
+            padding: 0.65rem 1.25rem;
+            min-height: 44px;
+            min-width: 44px;
+            box-sizing: border-box;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 2px 6px rgba(192, 66, 22, 0.28);
+            flex-shrink: 0;
+        }
+
+        .btn-copy-cf:hover {
+            background: #9e2a06;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(192, 66, 22, 0.35);
+        }
+
+        .btn-copy-cf:focus-visible {
+            outline: 3px solid var(--c-orange);
+            outline-offset: 3px;
+        }
+
+        .btn-copy-cf.copied {
+            background: #198754 !important;
+        }
+
         .bank-card {
             background: #ffffff;
             border: 2px solid var(--c-primary);
@@ -1424,11 +1571,15 @@
         .btn-copy-iban {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 6px;
             background: var(--c-primary);
             color: #ffffff;
             border: none;
             padding: 0.6rem 1.1rem;
+            min-height: 44px;
+            min-width: 44px;
+            box-sizing: border-box;
             border-radius: var(--radius-full);
             font-weight: 700;
             font-size: 0.95rem;
@@ -1441,6 +1592,11 @@
         .btn-copy-iban:hover {
             background: var(--c-forest);
             transform: translateY(-2px);
+        }
+
+        .btn-copy-iban:focus-visible {
+            outline: 3px solid var(--c-orange);
+            outline-offset: 3px;
         }
 
         .btn-copy-iban.copied {
@@ -2015,7 +2171,7 @@
         }
 
         @media print {
-            .site-header, .hero-cta-group, .contact-card-btn, .nav-cta, .btn-copy-iban, .skip-link {
+            .site-header, .hero-cta-group, .contact-card-btn, .nav-cta, .btn-copy-iban, .btn-copy-cf, .skip-link {
                 display: none !important;
             }
             body {
@@ -2437,10 +2593,45 @@
                     </svg>
                 </div>
 
-                <h2 class="donation-title">Dona tramite Bonifico Bancario</h2>
+                <h2 class="donation-title">Come Sostenerci: 5x1000 e Bonifico Bancario</h2>
                 <p class="donation-subtitle">
                     Ogni contributo, grande o piccolo, si trasforma direttamente in materiali didattici, libri, giochi per il giardino e laboratori per i bambini del Polo Paritario "Madre Teresa di Calcutta".
                 </p>
+
+                <!-- CARD DONAZIONE 5X1000 -->
+                <div class="card-cinque-per-mille">
+                    <div class="cinque-header">
+                        <div class="cinque-name-badge">
+                            <span class="cinque-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                            </span>
+                            <div>
+                                <h3 class="cinque-title">Dona il 5x1000 ad A Piccoli Passi APS</h3>
+                                <span style="font-size: 0.85rem; font-weight: normal; color: var(--c-text-muted);">Dichiarazione dei Redditi (Modello 730, Redditi o CU)</span>
+                            </div>
+                        </div>
+                        <span class="cinque-badge">SOSTEGNO ENTI DEL TERZO SETTORE</span>
+                    </div>
+
+                    <p class="cinque-desc">
+                        Basta una firma nel riquadro Enti del Terzo Settore della dichiarazione dei redditi indicando il nostro Codice Fiscale.
+                    </p>
+
+                    <div class="cf-highlight-box">
+                        <span class="cf-label">Codice Fiscale dell'Associazione:</span>
+                        <div class="cf-code-wrap">
+                            <code class="cf-code" id="cfText">92105570391</code>
+                            <button type="button" class="btn-copy-cf" id="copyCfBtn" onclick="copiaCF()" aria-label="Copia codice fiscale negli appunti">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                                </svg>
+                                <span id="copyCfBtnText">Copia C.F.</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="bank-card">
                     <div class="bank-header">
@@ -2451,7 +2642,7 @@
                                 </svg>
                             </span>
                             <div>
-                                <span style="display: block; font-size: 1.15rem; color: var(--c-forest);">La Cassa di Ravenna S.p.A.</span>
+                                <h3 class="bank-name-heading" style="margin: 0; font-size: 1.15rem; font-weight: 700; color: var(--c-forest); line-height: 1.2;">Bonifico Bancario: La Cassa di Ravenna S.p.A.</h3>
                                 <span style="font-size: 0.85rem; font-weight: normal; color: var(--c-text-muted);">Filiale di San Pietro in Vincoli</span>
                             </div>
                         </div>
@@ -2736,8 +2927,24 @@
         </div>
     </footer>
 
-    <!-- SCRIPT MINIMALE LEGGERO PER COPIARE L'IBAN -->
+    <!-- SCRIPT MINIMALE LEGGERO PER COPIARE CF E IBAN -->
     <script>
+    function copiaCF() {
+        const cf = '92105570391';
+        navigator.clipboard.writeText(cf).then(function() {
+            const btn = document.getElementById('copyCfBtn');
+            const txt = document.getElementById('copyCfBtnText');
+            btn.classList.add('copied');
+            txt.textContent = 'Copiato! ✓';
+            setTimeout(function() {
+                btn.classList.remove('copied');
+                txt.textContent = 'Copia C.F.';
+            }, 2500);
+        }).catch(function() {
+            prompt("Copia il Codice Fiscale manualmente:", '92105570391');
+        });
+    }
+
     function copiaIBAN() {
         const iban = 'IT49R0854213108000000775115';
         navigator.clipboard.writeText(iban).then(function() {
