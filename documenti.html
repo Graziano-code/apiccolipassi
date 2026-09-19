@@ -83,6 +83,30 @@
             font-size: 16px;
         }
 
+        /* ACCESSIBILITÀ & FOCUS */
+        :focus-visible {
+            outline: 3px solid var(--c-orange);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -60px;
+            left: 1rem;
+            background: var(--c-orange);
+            color: #ffffff;
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            z-index: 999;
+            transition: top 0.2s;
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            top: 1rem;
+        }
+
         .site-header {
             position: sticky;
             top: 0;
@@ -370,14 +394,22 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        .btn-doc:hover,
+        .btn-doc:hover {
+            background: var(--c-forest);
+            border-color: var(--c-forest);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
         .btn-doc:focus-visible {
             background: var(--c-forest);
             border-color: var(--c-forest);
             color: #ffffff;
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
-            outline: none;
+            outline: 3px solid var(--c-orange);
+            outline-offset: 3px;
         }
 
         .btn-doc:active {
@@ -488,13 +520,14 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
 
     <header class="site-header">
         <div class="header-container">
-            <a href="index.html" class="brand-link">
+            <a href="index.html" class="brand-link" aria-label="A Piccoli Passi APS - Torna alla Homepage">
                 <picture>
                     <source srcset="images/logo-trasparente.webp" type="image/webp">
-                    <img src="images/logo-trasparente.png" alt="Logo A Piccoli Passi APS" class="brand-logo" width="44" height="44">
+                    <img src="images/logo-trasparente.png" alt="Logo dell'Associazione A Piccoli Passi APS" class="brand-logo" width="44" height="44">
                 </picture>
                 <div class="brand-text">
                     <span class="brand-title"><span class="brand-accent">A</span> Piccoli Passi APS</span>
@@ -509,15 +542,15 @@
 
             <nav class="main-nav" id="mainNav" aria-label="Navigazione documenti">
                 <ul class="nav-links">
-                    <li><a href="index.html">← Torna alla Home</a></li>
-                    <li><a href="#statuto-online">Leggi Statuto</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="index.html" aria-label="Torna alla Homepage">← Torna alla Home</a></li>
+                    <li><a href="#statuto-online" aria-label="Vai alla sezione per consultare lo Statuto online">Leggi Statuto</a></li>
+                    <li><a href="privacy.html" aria-label="Consulta l'Informativa sulla Privacy">Privacy Policy</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="docs-main">
+    <main class="docs-main" id="main-content">
         <div class="docs-hero">
             <h1>Documenti e Trasparenza</h1>
             <p>Spazio pubblico dedicato alla trasparenza dell'Associazione di Promozione Sociale: modulistica scaricabile, Statuto ufficiale e verbali assembleari.</p>
@@ -531,11 +564,11 @@
                 <h2>Statuto dell'Associazione</h2>
                 <p>Lo Statuto costitutivo di A Piccoli Passi APS approvato ai sensi del D.Lgs. 3 luglio 2017 n. 117 (Codice del Terzo Settore). Definisce finalità, organi sociali, diritti dei soci e trasparenza (consultabile anche nella <a href="#statuto-online" style="color: var(--c-primary); font-weight: 700; text-decoration: underline;">sezione online dedicata</a>).</p>
                 <div class="doc-actions">
-                    <button type="button" onclick="window.print()" class="btn-doc" aria-label="Stampa lo Statuto dell'Associazione">
+                    <button type="button" onclick="window.print()" class="btn-doc" aria-label="Stampa lo Statuto dell'Associazione in formato PDF">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
                         <span>Stampa Statuto</span>
                     </button>
-                    <a href="Documenti/Statuto%20A%20PICCOLI%20PASSI%20APS.pdf" download="Statuto_A_Piccoli_Passi_APS.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc" aria-label="Scarica lo Statuto in formato PDF">
+                    <a href="Documenti/Statuto%20A%20PICCOLI%20PASSI%20APS.pdf" download="Statuto_A_Piccoli_Passi_APS.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc" aria-label="Scarica lo Statuto dell'associazione in PDF (apre una nuova scheda)">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                         <span>Scarica in PDF</span>
                     </a>
@@ -548,11 +581,11 @@
                 <h2>Domanda di Ammissione a Socio</h2>
                 <p>Modulo per richiedere l'iscrizione ad A Piccoli Passi APS. Quota di <strong>€ 15,00</strong> per il dichiarante ed <strong>€ 10,00</strong> per ogni ulteriore familiare dello stesso minore (fino al 01/10/2026, poi € 15,00 per tutti).</p>
                 <div class="doc-actions">
-                    <button type="button" onclick="window.print()" class="btn-doc" aria-label="Stampa la Domanda di Ammissione a Socio">
+                    <button type="button" onclick="window.print()" class="btn-doc" aria-label="Stampa la Domanda Socio 2026/2027 in formato PDF">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
                         <span>Stampa Modulo</span>
                     </button>
-                    <a href="Documenti/Domanda%20socio%20dichiarante%2020262027.pdf" download="Domanda_socio_dichiarante_20262027.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc" aria-label="Scarica la Domanda di Ammissione a Socio in formato PDF">
+                    <a href="Documenti/Domanda%20socio%20dichiarante%2020262027.pdf" download="Domanda_socio_dichiarante_20262027.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc" aria-label="Scarica la Domanda di Ammissione a Socio 2026/2027 in formato PDF (apre una nuova scheda)">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                         <span>Scarica in PDF</span>
                     </a>
@@ -565,11 +598,11 @@
                 <h2>Liberatoria Foto e Video Minori</h2>
                 <p>Modulo di autorizzazione per la realizzazione e pubblicazione di foto/video durante le iniziative associative, con la specifica garanzia della pubblicazione <strong>esclusivamente con volto coperto</strong> o non riconoscibile.</p>
                 <div class="doc-actions">
-                    <button type="button" onclick="window.print()" class="btn-doc" aria-label="Stampa la Liberatoria Foto e Video Minori">
+                    <button type="button" onclick="window.print()" class="btn-doc" aria-label="Stampa la Liberatoria Foto e Video Minori in formato PDF">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
                         <span>Stampa Modulo</span>
                     </button>
-                    <a href="Documenti/liberatoria%20generica%20minori.pdf" download="Liberatoria_foto_video_minori.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc" aria-label="Scarica la Liberatoria Foto e Video Minori in formato PDF">
+                    <a href="Documenti/liberatoria%20generica%20minori.pdf" download="Liberatoria_foto_video_minori.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc" aria-label="Scarica la Liberatoria Foto e Video Minori in formato PDF (apre una nuova scheda)">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                         <span>Scarica in PDF</span>
                     </a>
@@ -650,9 +683,9 @@
             </article>
 
             <div style="text-align: center; margin-top: 2rem;">
-                <button type="button" onclick="window.print()" class="btn-doc">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
-                    Stampa / Salva in PDF
+                <button type="button" onclick="window.print()" class="btn-doc" aria-label="Stampa o salva lo Statuto dell'Associazione in formato PDF">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+                    <span>Stampa / Salva in PDF</span>
                 </button>
             </div>
         </section>
@@ -661,7 +694,7 @@
 
     <footer class="site-footer">
         <p>&copy; 2026-2027 <strong>A Piccoli Passi APS</strong> • C.F. 92105570391 • San Pietro in Vincoli (RA)</p>
-        <p style="margin-top: 0.5rem;"><a href="index.html">Torna alla Home</a> | <a href="privacy.html">Privacy Policy</a></p>
+        <p style="margin-top: 0.5rem;"><a href="index.html" aria-label="Torna alla Homepage">Torna alla Home</a> | <a href="privacy.html" aria-label="Consulta la Privacy Policy">Privacy Policy</a></p>
     </footer>
 
     <!-- SCRIPT MENU MOBILE (Vanilla JS) -->
