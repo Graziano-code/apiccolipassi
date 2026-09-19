@@ -338,36 +338,82 @@
         }
 
         .doc-actions {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 0.75rem;
-            flex-wrap: wrap;
+            margin-top: auto;
+            width: 100%;
         }
+
         .btn-doc {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            gap: 7px;
             background: var(--c-primary);
             color: #ffffff;
             text-decoration: none;
+            font-family: var(--font-main);
             font-weight: 700;
-            padding: 0.65rem 1.25rem;
+            font-size: 0.90rem;
+            line-height: 1.2;
+            padding: 0.65rem 0.85rem;
             border-radius: var(--radius-full);
-            font-size: 0.95rem;
+            border: 2px solid var(--c-primary);
+            box-shadow: var(--shadow-sm);
             transition: var(--transition);
             min-height: 44px;
+            cursor: pointer;
+            text-align: center;
+            box-sizing: border-box;
+            width: 100%;
+            -webkit-tap-highlight-color: transparent;
         }
-        .btn-doc:hover {
+
+        .btn-doc:hover,
+        .btn-doc:focus-visible {
             background: var(--c-forest);
+            border-color: var(--c-forest);
+            color: #ffffff;
             transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            outline: none;
         }
-        .btn-doc-secondary {
-            background: #ffffff;
-            color: var(--c-forest);
-            border: 1.5px solid var(--c-border);
+
+        .btn-doc:active {
+            transform: translateY(0);
         }
-        .btn-doc-secondary:hover {
+
+        .btn-doc svg {
+            flex-shrink: 0;
+        }
+
+        .doc-actions-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+        }
+
+        .doc-badge-info {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.65rem 1rem;
             background: #f4f8f1;
-            border-color: var(--c-primary);
+            color: var(--c-forest);
+            border: 1.5px dashed var(--c-border);
+            border-radius: var(--radius-full);
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        @media (max-width: 380px) {
+            .doc-actions {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* SEZIONE CONSULTAZIONE ONLINE DELLO STATUTO */
@@ -483,16 +529,16 @@
             <article class="doc-card">
                 <span class="doc-card-badge">Documento Ufficiale ETS</span>
                 <h2>Statuto dell'Associazione</h2>
-                <p>Lo Statuto costitutivo di A Piccoli Passi APS approvato ai sensi del D.Lgs. 3 luglio 2017 n. 117 (Codice del Terzo Settore). Definisce finalità, organi sociali, diritti dei soci e trasparenza.</p>
+                <p>Lo Statuto costitutivo di A Piccoli Passi APS approvato ai sensi del D.Lgs. 3 luglio 2017 n. 117 (Codice del Terzo Settore). Definisce finalità, organi sociali, diritti dei soci e trasparenza (consultabile anche nella <a href="#statuto-online" style="color: var(--c-primary); font-weight: 700; text-decoration: underline;">sezione online dedicata</a>).</p>
                 <div class="doc-actions">
-                    <a href="#statuto-online" class="btn-doc">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                        Leggi Online
-                    </a>
-                    <button type="button" onclick="window.print()" class="btn-doc btn-doc-secondary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
-                        Stampa Statuto
+                    <button type="button" onclick="window.print()" class="btn-doc" aria-label="Stampa lo Statuto dell'Associazione">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+                        <span>Stampa Statuto</span>
                     </button>
+                    <a href="Documenti/Statuto%20A%20PICCOLI%20PASSI%20APS.pdf" download="Statuto_A_Piccoli_Passi_APS.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc" aria-label="Scarica lo Statuto in formato PDF">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                        <span>Scarica in PDF</span>
+                    </a>
                 </div>
             </article>
 
@@ -502,12 +548,13 @@
                 <h2>Domanda di Ammissione a Socio</h2>
                 <p>Modulo per richiedere l'iscrizione ad A Piccoli Passi APS. Quota di <strong>€ 15,00</strong> per il dichiarante ed <strong>€ 10,00</strong> per ogni ulteriore familiare dello stesso minore (fino al 01/10/2026, poi € 15,00 per tutti).</p>
                 <div class="doc-actions">
-                    <a href="mailto:apiccolipassi.spiv@gmail.com?subject=Richiesta%20Modulo%20Tesseramento%202026-2027" class="btn-doc">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        Richiedi Modulo via Email
-                    </a>
-                    <a href="https://wa.me/393347019793?text=Ciao%20Glenda,%20vorrei%20avere%20il%20modulo%20di%20tesseramento%202026/2027" target="_blank" rel="noopener noreferrer" class="btn-doc btn-doc-secondary">
-                        Richiedi su WhatsApp
+                    <button type="button" onclick="window.print()" class="btn-doc" aria-label="Stampa la Domanda di Ammissione a Socio">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+                        <span>Stampa Modulo</span>
+                    </button>
+                    <a href="Documenti/Domanda%20socio%20dichiarante%2020262027.pdf" download="Domanda_socio_dichiarante_20262027.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc" aria-label="Scarica la Domanda di Ammissione a Socio in formato PDF">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                        <span>Scarica in PDF</span>
                     </a>
                 </div>
             </article>
@@ -518,11 +565,13 @@
                 <h2>Liberatoria Foto e Video Minori</h2>
                 <p>Modulo di autorizzazione per la realizzazione e pubblicazione di foto/video durante le iniziative associative, con la specifica garanzia della pubblicazione <strong>esclusivamente con volto coperto</strong> o non riconoscibile.</p>
                 <div class="doc-actions">
-                    <a href="mailto:apiccolipassi.spiv@gmail.com?subject=Richiesta%20Modulo%20Liberatoria%20Foto" class="btn-doc">
-                        Richiedi Modulo
-                    </a>
-                    <a href="privacy.html" class="btn-doc btn-doc-secondary">
-                        Leggi Informativa Privacy
+                    <button type="button" onclick="window.print()" class="btn-doc" aria-label="Stampa la Liberatoria Foto e Video Minori">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+                        <span>Stampa Modulo</span>
+                    </button>
+                    <a href="Documenti/liberatoria%20generica%20minori.pdf" download="Liberatoria_foto_video_minori.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc" aria-label="Scarica la Liberatoria Foto e Video Minori in formato PDF">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                        <span>Scarica in PDF</span>
                     </a>
                 </div>
             </article>
@@ -532,8 +581,8 @@
                 <span class="doc-card-badge">Trasparenza RUNTS</span>
                 <h2>Verbali Assemblee e Rendiconti</h2>
                 <p>Spazio dedicato alla pubblicazione dei verbali dell'Assemblea ordinaria dei soci e dell'approvazione del bilancio di esercizio annuale, a garanzia della massima trasparenza verso soci e sostenitori.</p>
-                <div class="doc-actions">
-                    <span style="font-size: 0.95rem; font-weight: 600; color: var(--c-primary); align-self: center;">
+                <div class="doc-actions doc-actions-info">
+                    <span class="doc-badge-info">
                         Archivio aperto ai soci su richiesta (Art. 10 Statuto)
                     </span>
                 </div>
