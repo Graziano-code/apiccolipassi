@@ -1118,6 +1118,185 @@
         }
 
         /* ==========================================================================
+           7bis. SEZIONE INIZIATIVE: PROGETTO DAE "UN BATTITO PER LA VITA"
+           ========================================================================== */
+        .iniziative-section {
+            padding: 4rem 1rem;
+            background: #ffffff;
+            border-top: 2px solid var(--c-border);
+            border-bottom: 2px solid var(--c-border);
+        }
+
+        .iniziative-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .iniziative-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+            border: 2px solid var(--c-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.5rem;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            gap: 2.25rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .iniziative-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--c-orange), var(--c-yellow), var(--c-primary));
+        }
+
+        .iniziative-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .iniziative-badge-progetto {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff4ed;
+            color: var(--c-orange);
+            border: 1px solid #fbdcd0;
+            padding: 0.35rem 0.85rem;
+            border-radius: var(--radius-full);
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            align-self: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .iniziative-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--c-forest);
+            line-height: 1.25;
+            margin-bottom: 1.15rem;
+        }
+
+        .iniziative-text {
+            color: var(--c-text-muted);
+            font-size: 1.05rem;
+            line-height: 1.65;
+            margin-bottom: 1.25rem;
+        }
+
+        .iniziative-text p {
+            margin-bottom: 0.95rem;
+        }
+
+        .iniziative-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .dae-features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.85rem;
+            margin: 0.5rem 0 1.5rem;
+        }
+
+        .dae-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #f4f8f1;
+            border: 1px solid #d9e8d4;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .dae-feature-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .dae-feature-item strong {
+            display: block;
+            color: var(--c-forest);
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .dae-feature-item span {
+            font-size: 0.88rem;
+            color: var(--c-text-muted);
+            line-height: 1.35;
+        }
+
+        .dae-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 0.5rem;
+        }
+
+        .dae-actions .btn {
+            width: 100%;
+            max-width: none;
+            justify-content: center;
+        }
+
+        .dae-visual {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .dae-visual-box {
+            position: relative;
+            background: #ffffff;
+            border: 3px solid var(--c-primary);
+            border-radius: var(--radius-lg);
+            padding: 0.75rem;
+            box-shadow: var(--shadow-md);
+            width: 100%;
+            max-width: 520px;
+        }
+
+        .dae-img {
+            width: 100%;
+            height: auto;
+            border-radius: calc(var(--radius-lg) - 6px);
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 4 / 3;
+        }
+
+        .dae-badge-overlay {
+            position: absolute;
+            bottom: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--c-forest);
+            color: #ffffff;
+            font-weight: 800;
+            padding: 0.45rem 1.2rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 2px solid #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        /* ==========================================================================
            8. NUOVA SEZIONE: SOSTIENICI CON UNA DONAZIONE / BONIFICO BANCARIO
            ========================================================================== */
         .donation-section {
@@ -1670,6 +1849,20 @@
             .tessera-actions .btn {
                 width: auto;
             }
+
+            .dae-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .dae-actions {
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .dae-actions .btn {
+                width: auto;
+            }
         }
 
         @media (min-width: 900px) {
@@ -1775,6 +1968,25 @@
                 text-align: left;
             }
 
+            .iniziative-card {
+                flex-direction: row;
+                align-items: center;
+                padding: 3rem 2.5rem;
+                gap: 3.5rem;
+            }
+
+            .iniziative-content {
+                flex: 1 1 55%;
+            }
+
+            .dae-visual {
+                flex: 1 1 45%;
+            }
+
+            .iniziative-title {
+                font-size: 2.2rem;
+            }
+
             .contacts-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
@@ -1844,6 +2056,7 @@
                     <li><a href="#chi-siamo">Chi Siamo</a></li>
                     <li><a href="#finalita">Le 7 Finalità</a></li>
                     <li><a href="#tessera">Tessera 2026/27</a></li>
+                    <li><a href="#iniziative">Iniziative</a></li>
                     <li><a href="#dona" class="nav-dona">Dona</a></li>
                     <li><a href="documenti.html">Documenti</a></li>
                     <li><a href="#faq">FAQ</a></li>
@@ -2122,9 +2335,9 @@
                     </div>
 
                     <div class="tessera-actions">
-                        <a href="mailto:apiccolipassi.spiv@gmail.com?subject=Richiesta%20tessere%20A%20Piccoli%20Passi%20APS" class="btn btn-primary btn-tessera-email" aria-label="Richiedi la tua tessera in formato digitale via email">
+                        <a href="mailto:apiccolipassi.spiv@gmail.com?subject=Richiesta%20tessere%20A%20Piccoli%20Passi%20APS" class="btn btn-primary btn-tessera-email" aria-label="Richiesta tessere in formato digitale via email">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink: 0;"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                            <span>Richiedi la tua tessera in formato digitale</span>
+                            <span>Richiesta tessere in formato digitale</span>
                         </a>
                         <a href="#dona" class="btn btn-secondary">
                             Versa Quota via Bonifico
@@ -2132,8 +2345,73 @@
                     </div>
 
                     <p class="tessera-note">
-                        <strong>Nota:</strong> Il rilascio della tessera digitale è gratuito ma subordinato alla compilazione del modulo cartaceo/digitale e al versamento della quota associativa.
+                        <strong>Nota:</strong> Il rilascio della tessera digitale è gratuito ma subordinato alla compilazione del modulo e al versamento della quota associativa.
                     </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEZIONE INIZIATIVE: PROGETTO DAE "UN BATTITO PER LA VITA" -->
+        <section class="iniziative-section" id="iniziative">
+            <div class="iniziative-container">
+
+                <div class="iniziative-card">
+                    
+                    <!-- COLONNA 1: TESTO ED EMOZIONE -->
+                    <div class="iniziative-content">
+                        <span class="iniziative-badge-progetto">❤️ Iniziativa Straordinaria</span>
+                        <h2 class="iniziative-title">Un battito per la vita: Aiutaci a proteggere la nostra scuola</h2>
+                        
+                        <div class="iniziative-text">
+                            <p>
+                                La sicurezza dei nostri figli non ha prezzo, ma insieme possiamo renderla concreta. Quest'anno l'Associazione A Piccoli Passi APS ha lanciato una missione straordinaria: raccogliere i fondi necessari per acquistare e installare un defibrillatore semiautomatico (DAE) all'interno del polo scolastico 'Madre Teresa di Calcutta', e coprire i costi dei corsi di abilitazione BLSD (Rianimazione Cardiopolmonare e Uso del Defibrillatore) per le nostre maestre.
+                            </p>
+                            <p>
+                                Un intervento tempestivo può salvare una vita. Ogni piccolo contributo, che sia una donazione libera o il supporto alle nostre attività, ci avvicina a questo grande obiettivo di comunità. Dona anche tu un battito di sicurezza per la scuola!
+                            </p>
+                        </div>
+
+                        <div class="dae-features">
+                            <div class="dae-feature-item">
+                                <span class="dae-feature-icon" aria-hidden="true">⚡</span>
+                                <div>
+                                    <strong>Defibrillatore Semiautomatico (DAE)</strong>
+                                    <span>Dispositivo salvavita installato all'interno del polo scolastico.</span>
+                                </div>
+                            </div>
+                            <div class="dae-feature-item">
+                                <span class="dae-feature-icon" aria-hidden="true">🎓</span>
+                                <div>
+                                    <strong>Corsi BLSD per le Maestre</strong>
+                                    <span>Abilitazione e formazione continua al primo soccorso pediatrico.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dae-actions">
+                            <a href="#dona" class="btn btn-primary" aria-label="Dona ora per sostenere l'acquisto del defibrillatore DAE">
+                                ❤️ Sostieni il Progetto DAE
+                            </a>
+                            <a href="#contatti" class="btn btn-secondary" aria-label="Contattaci per informazioni sull'iniziativa DAE">
+                                Chiedi Informazioni
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- COLONNA 2: IMMAGINE DAE -->
+                    <div class="dae-visual">
+                        <div class="dae-visual-box">
+                            <picture>
+                                <source srcset="images/DAE.webp" type="image/webp">
+                                <img src="images/DAE.jpeg" alt="Defibrillatore DAE per il Polo d'Infanzia Madre Teresa di Calcutta - A Piccoli Passi APS" class="dae-img" width="1200" height="896" loading="lazy" decoding="async">
+                            </picture>
+                            <div class="dae-badge-overlay">
+                                <span>❤️</span> Obiettivo: Scuola Cardioprotetta
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -2211,7 +2489,8 @@
                     <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--c-border-subtle); font-size: 0.95rem;">
                         <strong style="color: var(--c-forest); display: block; margin-bottom: 0.35rem;">Causali consigliate:</strong>
                         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.35rem; color: var(--c-text-muted);">
-                            <li>• Per sostenere i progetti: <em style="color: var(--c-text);">"Donazione liberale per progetti Polo Madre Teresa di Calcutta"</em></li>
+                            <li>• Per sostenere il Defibrillatore: <em style="color: var(--c-text);">"Donazione Progetto DAE - Un battito per la vita"</em></li>
+                            <li>• Per sostenere i progetti educativi: <em style="color: var(--c-text);">"Donazione liberale per progetti Polo Madre Teresa di Calcutta"</em></li>
                             <li>• Per il tesseramento annuale: <em style="color: var(--c-text);">"Quota associativa 2026/2027 - [Nome e Cognome Socio]"</em></li>
                         </ul>
                     </div>
@@ -2418,6 +2697,7 @@
                     <li><a href="#chi-siamo">Chi Siamo</a></li>
                     <li><a href="#finalita">Le 7 Finalità</a></li>
                     <li><a href="#tessera">Tessera 2026/27</a></li>
+                    <li><a href="#iniziative">Iniziative (Progetto DAE)</a></li>
                     <li><a href="#dona">Dona / Bonifico Bancario</a></li>
                     <li><a href="documenti.html">Documenti e Statuto</a></li>
                     <li><a href="privacy.html">Informativa Privacy (GDPR)</a></li>
