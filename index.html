@@ -1450,13 +1450,13 @@
             font-size: 0.95rem;
             color: var(--c-text);
             line-height: 1.5;
-            margin: 0 0 0.85rem 0;
+            margin: 0 0 0.65rem 0;
         }
 
         .cinque-bullets {
             list-style: none;
             padding: 0;
-            margin: 0 0 1rem 0;
+            margin: 0;
             font-size: 0.88rem;
             color: var(--c-text-muted);
             display: flex;
@@ -1473,6 +1473,7 @@
             border: 1.5px dashed #c04216;
             border-radius: var(--radius-md);
             padding: 0.9rem 1rem;
+            margin-bottom: 1rem;
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
@@ -2453,27 +2454,27 @@
                 font-size: 1.15rem;
             }
 
-            .cinque-desc {
-                margin: 0 0 0.5rem;
-                font-size: 0.90rem;
-                line-height: 1.45;
-            }
-
-            .cinque-bullets {
-                margin: 0 0 0.85rem 0;
-                font-size: 0.85rem;
-                gap: 0.3rem;
-            }
-
             .cf-highlight-box {
-                margin-top: auto;
-                padding: 0.65rem 0.85rem;
+                padding: 0.6rem 0.85rem;
+                margin-bottom: 0.6rem;
                 gap: 0.35rem;
                 min-width: auto;
             }
 
             .cf-code {
                 font-size: 1.2rem;
+            }
+
+            .cinque-desc {
+                margin: 0 0 0.45rem;
+                font-size: 0.88rem;
+                line-height: 1.45;
+            }
+
+            .cinque-bullets {
+                margin: 0;
+                font-size: 0.85rem;
+                gap: 0.3rem;
             }
 
             .bank-card {
@@ -2998,32 +2999,22 @@
                     
                     <!-- CARD DONAZIONE 5X1000 -->
                     <div class="card-cinque-per-mille">
-                        <div class="cinque-info-col">
-                            <div class="cinque-header">
-                                <div class="cinque-name-badge">
-                                    <span class="cinque-icon" aria-hidden="true">
-                                        <svg viewBox="0 0 24 24">
-                                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                                        </svg>
-                                    </span>
-                                    <div>
-                                        <h3 class="cinque-title">Dona il 5x1000 ad A Piccoli Passi APS</h3>
-                                        <span style="font-size: 0.85rem; font-weight: normal; color: var(--c-text-muted);">Dichiarazione dei Redditi (Modello 730, Redditi o CU)</span>
-                                    </div>
+                        <div class="cinque-header">
+                            <div class="cinque-name-badge">
+                                <span class="cinque-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <h3 class="cinque-title">Dona il 5x1000 ad A Piccoli Passi APS</h3>
+                                    <span style="font-size: 0.85rem; font-weight: normal; color: var(--c-text-muted);">Dichiarazione dei Redditi (Modello 730, Redditi o CU)</span>
                                 </div>
-                                <span class="cinque-badge">SOSTEGNO ENTI DEL TERZO SETTORE</span>
                             </div>
-
-                            <p class="cinque-desc">
-                                Basta una firma nel riquadro <strong>"Sostegno degli Enti del Terzo Settore"</strong> della dichiarazione dei redditi e indicare il nostro Codice Fiscale.
-                            </p>
-                            <ul class="cinque-bullets">
-                                <li>✓ <strong>Non costa nulla:</strong> è una quota di imposte che lo Stato devolve su tua indicazione.</li>
-                                <li>✓ <strong>Non è alternativo:</strong> puoi destinare anche l'8x1000 e il 2x1000 contemporaneamente.</li>
-                                <li>✓ <strong>Aiuto concreto:</strong> il 100% sostiene arredi, laboratori e materiale didattico dei bambini.</li>
-                            </ul>
+                            <span class="cinque-badge">SOSTEGNO ENTI DEL TERZO SETTORE</span>
                         </div>
 
+                        <!-- BOX CODICE FISCALE SPECULARE ALL'IBAN -->
                         <div class="cf-highlight-box">
                             <span class="cf-label">Codice Fiscale dell'Associazione:</span>
                             <div class="cf-code-wrap">
@@ -3035,6 +3026,17 @@
                                     <span id="copyCfBtnText">Copia C.F.</span>
                                 </button>
                             </div>
+                        </div>
+
+                        <div class="cinque-info-col">
+                            <p class="cinque-desc">
+                                Basta una firma nel riquadro <strong>"Sostegno degli Enti del Terzo Settore"</strong> della dichiarazione dei redditi e indicare il nostro Codice Fiscale.
+                            </p>
+                            <ul class="cinque-bullets">
+                                <li>✓ <strong>Non costa nulla:</strong> è una quota di imposte che lo Stato devolve su tua indicazione.</li>
+                                <li>✓ <strong>Non è alternativo:</strong> puoi destinare anche l'8x1000 e il 2x1000 contemporaneamente.</li>
+                                <li>✓ <strong>Aiuto concreto:</strong> il 100% sostiene arredi, laboratori e materiale didattico dei bambini.</li>
+                            </ul>
                         </div>
                     </div>
 
