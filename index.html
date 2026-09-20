@@ -330,6 +330,19 @@
             top: 1rem;
         }
 
+        /* CLASSE DI ACCESSIBILITÀ SCREEN READER ONLY (WCAG) */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         /* ==========================================================================
            2. HEADER MOBILE-FIRST
            ========================================================================== */
@@ -1863,6 +1876,26 @@
             margin-bottom: 0.85rem;
         }
 
+        .contact-phone-link {
+            color: var(--c-forest);
+            text-decoration: underline;
+            text-decoration-color: rgba(45, 90, 39, 0.35);
+            text-underline-offset: 3px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0.15rem 0.5rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .contact-phone-link:hover,
+        .contact-phone-link:focus-visible {
+            color: var(--c-primary);
+            text-decoration-color: var(--c-primary);
+        }
+
         .contact-card-btn {
             display: inline-flex;
             align-items: center;
@@ -3022,8 +3055,8 @@
                         </div>
                         <h3>Glenda Sternini</h3>
                         <span class="contact-role">Presidente • Referente</span>
-                        <p style="margin-bottom: 1rem; font-size: 1.15rem; font-weight: 700; color: var(--c-forest);">
-                            334 701 9793
+                        <p style="margin-bottom: 0.85rem; font-size: 1.15rem; font-weight: 700;">
+                            <a href="tel:+393347019793" class="contact-phone-link" aria-label="Chiama Glenda Sternini al numero 334 701 9793">334 701 9793</a>
                         </p>
                         <a href="https://wa.me/393347019793?text=Ciao%20Glenda,%20vorrei%20avere%20informazioni%20su%20A%20Piccoli%20Passi%20APS" target="_blank" rel="noopener noreferrer" class="contact-card-btn" aria-label="Contatta Glenda Sternini su WhatsApp (apre una nuova scheda)">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -3042,8 +3075,8 @@
                         </div>
                         <h3>Andrea</h3>
                         <span class="contact-role">Referente Direttivo</span>
-                        <p style="margin-bottom: 1rem; font-size: 1.15rem; font-weight: 700; color: var(--c-forest);">
-                            340 793 1502
+                        <p style="margin-bottom: 0.85rem; font-size: 1.15rem; font-weight: 700;">
+                            <a href="tel:+393407931502" class="contact-phone-link" aria-label="Chiama Andrea al numero 340 793 1502">340 793 1502</a>
                         </p>
                         <a href="https://wa.me/393407931502?text=Ciao%20Andrea,%20vorrei%20avere%20informazioni%20su%20A%20Piccoli%20Passi%20APS" target="_blank" rel="noopener noreferrer" class="contact-card-btn" aria-label="Contatta Andrea su WhatsApp (apre una nuova scheda)">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -3158,6 +3191,9 @@
         </div>
     </footer>
 
+    <!-- REGIONE LIVE ACCESSIBILE PER ANNUNCI SCREEN READER (WCAG AAA) -->
+    <div id="a11yLiveStatus" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
     <!-- SCRIPT MINIMALE LEGGERO PER COPIARE CF E IBAN -->
     <script>
     function copiaCF() {
@@ -3167,6 +3203,8 @@
             const txt = document.getElementById('copyCfBtnText');
             btn.classList.add('copied');
             txt.textContent = 'Copiato! ✓';
+            const live = document.getElementById('a11yLiveStatus');
+            if (live) live.textContent = 'Codice Fiscale copiato negli appunti.';
             setTimeout(function() {
                 btn.classList.remove('copied');
                 txt.textContent = 'Copia C.F.';
@@ -3183,6 +3221,8 @@
             const txt = document.getElementById('copyBtnText');
             btn.classList.add('copied');
             txt.textContent = 'Copiato! ✓';
+            const live = document.getElementById('a11yLiveStatus');
+            if (live) live.textContent = 'Codice IBAN copiato negli appunti.';
             setTimeout(function() {
                 btn.classList.remove('copied');
                 txt.textContent = 'Copia IBAN';
