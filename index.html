@@ -1388,7 +1388,7 @@
             margin-bottom: 0;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
         }
 
         .cinque-header {
@@ -1551,7 +1551,7 @@
             margin-bottom: 0;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
         }
 
         .bank-header {
@@ -2434,35 +2434,61 @@
             .card-cinque-per-mille {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: flex-start;
                 padding: 1.15rem 1.25rem;
                 margin-bottom: 0;
             }
 
-            .cinque-info-col {
+            .bank-card {
                 display: flex;
                 flex-direction: column;
+                justify-content: flex-start;
+                padding: 1.15rem 1.25rem;
+                margin-bottom: 0;
+            }
+
+            .cinque-header,
+            .bank-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                padding-bottom: 0.5rem;
+                margin-bottom: 0.65rem;
+                min-height: 68px;
+                box-sizing: border-box;
             }
 
             .cinque-header {
                 border-bottom: 1px solid #fdeee7;
-                padding-bottom: 0.5rem;
-                margin-bottom: 0.6rem;
+            }
+
+            .bank-header {
+                border-bottom: 1.5px solid var(--c-border-subtle);
             }
 
             .cinque-title {
                 font-size: 1.15rem;
+                margin: 0;
+                line-height: 1.2;
             }
 
-            .cf-highlight-box {
+            .cf-highlight-box,
+            .iban-highlight-box {
                 padding: 0.6rem 0.85rem;
-                margin-bottom: 0.6rem;
+                margin-bottom: 0.65rem;
                 gap: 0.35rem;
-                min-width: auto;
+                min-height: 82px;
+                box-sizing: border-box;
             }
 
             .cf-code {
                 font-size: 1.2rem;
+            }
+
+            .iban-code {
+                font-size: 1.05rem;
             }
 
             .cinque-desc {
@@ -2475,29 +2501,6 @@
                 margin: 0;
                 font-size: 0.85rem;
                 gap: 0.3rem;
-            }
-
-            .bank-card {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                padding: 1.15rem 1.25rem;
-                margin-bottom: 0;
-            }
-
-            .bank-header {
-                padding-bottom: 0.5rem;
-                margin-bottom: 0.6rem;
-            }
-
-            .iban-highlight-box {
-                padding: 0.6rem 0.85rem;
-                margin-bottom: 0.6rem;
-                gap: 0.35rem;
-            }
-
-            .iban-code {
-                font-size: 1.05rem;
             }
 
             .bank-details-grid {
