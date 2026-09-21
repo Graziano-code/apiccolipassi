@@ -40,11 +40,13 @@
     <meta name="twitter:image" content="images/og-share.jpg">
 
     <!-- Favicon e Risorse -->
-    <link rel="icon" type="image/png" href="images/logo-trasparente.png">
-    <link rel="apple-touch-icon" href="images/logo-trasparente.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Font Self-Hosted in Locale (100% GDPR Compliant, zero chiamate a server esterni) -->
     <link rel="preload" href="fonts/titilliumweb-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/titilliumweb-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/caveat-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- DATI STRUTTURATI SCHEMA.ORG (JSON-LD) PER MOTORI DI RICERCA E INTELLIGENZA ARTIFICIALE (GEO) -->
     <!-- SOSPESO TEMPORANEAMENTE: Da riattivare al completamento dell'iscrizione al RUNTS con relativo numero di repertorio
@@ -191,7 +193,7 @@
             font-family: 'Caveat';
             font-style: normal;
             font-weight: 600;
-            font-display: swap;
+            font-display: optional;
             src: url('fonts/caveat-600-latin.woff2') format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -200,7 +202,7 @@
             font-family: 'Caveat';
             font-style: normal;
             font-weight: 700;
-            font-display: swap;
+            font-display: optional;
             src: url('fonts/caveat-700-latin.woff2') format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -209,7 +211,7 @@
             font-family: 'Titillium Web';
             font-style: normal;
             font-weight: 400;
-            font-display: swap;
+            font-display: optional;
             src: url('fonts/titilliumweb-400-latin.woff2') format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -218,7 +220,7 @@
             font-family: 'Titillium Web';
             font-style: normal;
             font-weight: 600;
-            font-display: swap;
+            font-display: optional;
             src: url('fonts/titilliumweb-600-latin.woff2') format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -227,7 +229,7 @@
             font-family: 'Titillium Web';
             font-style: normal;
             font-weight: 700;
-            font-display: swap;
+            font-display: optional;
             src: url('fonts/titilliumweb-700-latin.woff2') format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -240,7 +242,7 @@
             --c-forest: #2d5a27;      /* Verde Scuro Istituzionale */
             --c-primary: #3d792b;     /* Verde Prato Logo */
             --c-leaf: #689f38;        /* Verde Mela / Sostenere */
-            --c-orange: #e25524;      /* Arancione "A" e "OGGI" */
+            --c-orange: #c54316;      /* Arancione Accessibile WCAG AAA */
             --c-blue: #1d70b8;        /* Blu Scritta "Piccoli Passi" / Eventi */
             --c-yellow: #f4b223;      /* Giallo Sole */
             --c-pink: #c8385e;        /* Magenta / Creare Comunità */
@@ -2111,7 +2113,7 @@
         .footer-motto-badge {
             font-family: var(--font-script);
             font-size: 1.6rem;
-            color: var(--c-yellow);
+            color: #ffe082;
             font-weight: 700;
         }
 
@@ -3393,7 +3395,7 @@
                     <strong>Banca:</strong> CREDITO COOPERATIVO RAVENNATE, FORLIVESE E IMOLESE SOCIETA' COOPERATIVA
                 </p>
                 <p>
-                    ✉️ <a href="mailto:apiccolipassi.spiv@gmail.com" aria-label="Invia un'email all'associazione" style="color: var(--c-yellow); text-decoration: underline;">apiccolipassi.spiv@gmail.com</a>
+                    ✉️ <a href="mailto:apiccolipassi.spiv@gmail.com" aria-label="Invia un'email all'associazione" style="color: #ffe082; text-decoration: underline;">apiccolipassi.spiv@gmail.com</a>
                 </p>
                 <ul class="footer-legal-links">
                     <li><a href="documenti.html" aria-label="Consulta lo Statuto e i Documenti di Trasparenza">Statuto e Trasparenza</a></li>
