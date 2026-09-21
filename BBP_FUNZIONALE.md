@@ -118,7 +118,7 @@ Esposizione semantica strutturata in griglia a tessere delle 7 aree operative de
 - **Pulsanti di Azione:** *"❤️ Sostieni il Progetto DAE"* (salto diretto alla sezione Bonifico) e *"Chiedi Informazioni"* (salto a Contatti).
 
 ### RF06: Sezione Donazioni & Coordinate Bancarie Ufficiali
-- **Istituto Bancario:** *La Cassa di Ravenna S.p.A.* – Filiale di San Pietro in Vincoli.
+- **Istituto Bancario:** *CREDITO COOPERATIVO RAVENNATE, FORLIVESE E IMOLESE SOCIETA' COOPERATIVA* – Filiale di San Pietro in Vincoli.
 - **Intestatario Ufficiale:** *A PICCOLI PASSI APS*.
 - **Codice IBAN:** `IT49 R085 4213 1080 0000 0775 115`.
 - **Copia Rapida Interattiva:** Tasto "Copia IBAN" con copia automatica negli appunti di sistema e riscontro visivo temporizzato (*"Copiato! ✓"* per 2,5 secondi).
@@ -137,7 +137,7 @@ Componente nativo a fisarmonica semantica (`<details>` e `<summary>`) per fornir
 
 ### RF08: Recapiti e Contatti Diretti
 - **Presidente / Referente:** Glenda Sternini – Telefono diretto e link WhatsApp immediato (`https://wa.me/393347019793`).
-- **Referente Direttivo:** Andrea – Telefono diretto (`+39 340 793 1502`).
+- **Referente Direttivo:** Andrea Fantini – Telefono diretto (`+39 340 793 1502`).
 - **Email Istituzionale:** `apiccolipassi.spiv@gmail.com`.
 - **Instagram Ufficiale:** `@apiccolipassi.spiv`.
 - **Sede Fisica e Mappa:** Indicazione puntuale di Via Gambellara 7, San Pietro in Vincoli (RA).

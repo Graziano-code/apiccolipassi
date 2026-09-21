@@ -202,7 +202,7 @@ Quando un link del sito viene inviato su WhatsApp, Telegram o social network, il
 ### 6.2 Dati Strutturati Schema.org JSON-LD (@graph)
 Nel codice di `index.html` è iniettato un blocco JSON-LD completo che definisce formalmente la rete di entità dell'Associazione:
 - **Entità `NGO` (Non-Governmental Organization) & `EducationalOrganization`:** censimento del nome ufficiale, codice fiscale `92105570391`, data di costituzione, indirizzo con geolocalizzazione precisa (San Pietro in Vincoli, coordinate GPS).
-- **Entità `ContactPoint`:** elenca formalmente i referenti (Presidente Glenda Sternini, referente Andrea, casella email).
+- **Entità `ContactPoint`:** elenca formalmente i referenti (Presidente Glenda Sternini, referente Andrea Fantini, casella email).
 - **Entità `FAQPage`:** espone in formato nativo per i motori IA le risposte ufficiali su trasparenza, tesseramento e finalità statutarie, rendendo il sito la fonte primaria di citazione (*Ground Truth*).
 
 ### 6.3 Geo-Tagging Territoriale (San Pietro in Vincoli - Ravenna)
